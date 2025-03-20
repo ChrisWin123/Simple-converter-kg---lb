@@ -1,0 +1,35 @@
+while True:
+    print()
+    print("Convert KG ------> POUNDS")
+    print("Convert POUNDS -----> KG")
+    print()
+    try:
+        weight = input("enter your unit of weight (kg) or (pounds): ").lower()
+        amount = float(input("Enter the amount of weight: "))
+        round1 = int(input("how much do you want to round off: "))
+        if weight == "kg":
+            total = amount * 2.2046
+            if round1 >= 0:
+                round_meter = round(total, round1)
+                print()
+                print(f"the total weight in pounds is {round_meter}pounds")
+            else:
+                print("this operation is not possible")
+        elif weight == "pounds":
+            total = amount * 0.453592
+            if round1 >= 0:
+                round_meter = round(total, round1)
+                print()
+                print(f"the total weight in kilogram is {round_meter}kg")
+            else:
+                print("this operation is not possible")
+        else:
+            print("not applicable")
+    except ValueError:
+        print("couldn't execute")
+
+    again = input("do you wish to convert again?(Y/N): ").lower()
+    if again == 'y':
+        continue
+    else:
+        break
